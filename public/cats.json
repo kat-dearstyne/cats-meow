@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Fluffy",
+    "description": "A playful and affectionate cat.",
+    "image": "../images/fluffy.jpeg"
+  },
+  {
+    "name": "Whiskers",
+    "description": "A mischievous and curious cat.",
+    "image": "../images/whiskers.jpeg"
+  },
+  {
+    "name": "Mittens",
+    "description": "A gentle and cuddly cat.",
+    "image": "../images/mittens.jpeg"
+  }
+]
