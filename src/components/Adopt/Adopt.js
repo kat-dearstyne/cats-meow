@@ -1,3 +1,4 @@
+// Import necessary modules and components
 import React, { useState, useEffect } from "react";
 import CatService from "../../services/CatService";
 import useService from "../useService";
@@ -6,22 +7,29 @@ import FormRadio from "../Forms/FormRadio";
 import AdoptService from "../../services/AdoptService";
 import BaseForm from "../Forms/BaseForm";
 
+// Define the Adopt component
 const Adopt = (props) => {
+  // Define the state variable 'currentCat' and the setter function 'setCurrentCat'
   const [currentCat, setCurrentCat] = useState("");
 
+  // function to transform the cat data into the form
   const transformCatsData = (cats) => {
     return cats.map((cat) => cat.name);
   };
 
+  // Get the cat options from the CatService
   const catOptions = useService(CatService, transformCatsData);
 
+  // gets the cat name from the URL params and set it as the currentCat
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const catName = urlParams.get("cat");
     setCurrentCat(catName || "");
   }, []);
 
+  // fields for the adoption form
   const formFields = [
+    // Each object is representative of one field, with properties
     {
       label: "Full Name",
       type: "text",
