@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FormSuccessPopup from "../Forms/FormSuccessPopup";
 import FormItem from "../Forms/FormItem";
 
-const GenericForm = ({ formFields, service }) => {
+const BaseForm = ({ formFields, service }) => {
     const [showPopup, setShowPopup] = useState(false);
     const [formData, setFormData] = useState({});
 
@@ -49,4 +49,4 @@ const GenericForm = ({ formFields, service }) => {
     );
 };
 
-export default GenericForm;
+export default BaseForm;
