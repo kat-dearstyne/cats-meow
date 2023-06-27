@@ -1,4 +1,4 @@
-# Cat's Meow Non-Profit Organization Website
+_# Cat's Meow Non-Profit Organization Website
 
 Source code for all aspects of website development for the Cats Meow project.
 
@@ -18,8 +18,11 @@ The Cat's Meow website aims to create a seamless experience for prospective cat 
 
 ## Future Builds
 
-We are still working to build out the form completion for both the Adoption Form and Contact Form.
+We are still working to build out users for the platform so that individuals can sign in and check the status of their application.
+
+## UML Diagram
+![Mermaid Diagram](uml_diagram.png)
 
 # Partners
 
-Kat Dearstyne & Annalisa Szymanski
+Kat Dearstyne & Annalisa Szymanski_

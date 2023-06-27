@@ -4,7 +4,7 @@ import useService from "../useService";
 import CatCard from "./CatCard";
 
 const Cats = () => {
-    const cats = useService(CatService.getData);
+    const cats = useService(CatService);
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const nextCard = () => {
@@ -17,6 +17,7 @@ const Cats = () => {
 
     return (
         <div id="cats">
+            <h2>Meet Our Cats!</h2>
             <div className="carousel">
                 <div>
                     {cats.map((cat, index) => (

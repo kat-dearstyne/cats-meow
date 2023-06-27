@@ -1,6 +1,6 @@
 import React from "react";
 
-const FormRadio = ({ label, name, options, required }) => (
+const FormRadio = ({ label, name, options, required, onChange }) => (
     <div>
         <label htmlFor={name}>{label}:</label>
         <div className="radio-group">
@@ -13,6 +13,7 @@ const FormRadio = ({ label, name, options, required }) => (
                         name={name}
                         value={option}
                         required={required}
+                        onChange={onChange}
                     />
                 </div>
             ))}
