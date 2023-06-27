@@ -14,12 +14,12 @@ const Adopt = (props) => {
     return cats.map((cat) => cat.name);
   };
   // Populate cat preference with cat names from data
-  const catOptions = useService(CatService.getData, transformCatsData);
+  const catOptions = useService(CatService, transformCatsData);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const catName = urlParams.get("cat");
-    setCurrentCat(catName);
+    setCurrentCat(catName || ""); // If catName is null, set currentCat to an empty string
   }, []);
 
   const handleSubmit = (event) => {

@@ -18,7 +18,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
 }
 
 .parent-center {
@@ -35,6 +34,15 @@ header {
   color: #fff;
   text-align: center; /* Center the content */
   font-family: "Roboto", sans-serif;
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+#main {
+  padding: 20px;
+  margin-top: 60px; /* Adjust margin-top to make space for the navbar */
+  padding-top: 40px; /* Add padding equal to navbar height */
 }
 
 header h1 {

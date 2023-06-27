@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const useService = (getData, transformData = (response) => response) => {
+const useService = (service, transformData = (response) => response) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    getData()
+    service.getAllObjects()
         .then((response) => {
           if (Array.isArray(response)) {
-            const transformedData = transformData(response);
-            setData(transformedData);
+              const data = response.map(r => r.attributes);
+              const transformedData = transformData(data);
+              setData(transformedData);
+
           } else {
             console.error("Invalid response data. Expected an array.");
           }
@@ -16,7 +18,7 @@ const useService = (getData, transformData = (response) => response) => {
         .catch((error) => {
           console.error(error);
         });
-  }, []);
+  });
 
   return data;
 };
