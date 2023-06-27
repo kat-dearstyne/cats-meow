@@ -5,7 +5,6 @@ export const createService = (className) => {
     createObject: (data) => {
       const MyObject = Parse.Object.extend(className);
       const object = new MyObject();
-
       for (const key in data) {
         object.set(key, data[key]);
       }
