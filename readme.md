@@ -1,4 +1,4 @@
-_# Cat's Meow Non-Profit Organization Website
+# Cat's Meow Non-Profit Organization Website
 
 Source code for all aspects of website development for the Cats Meow project.
 
