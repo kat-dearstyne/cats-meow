@@ -1,9 +1,16 @@
+- Merge branch 'main' of github.com:kat-dearstyne/cats-meow
+- add change log for release v0.2.0
+- Merge pull request #3 from kat-dearstyne/FEATURE-4/part-b
+- ComponentTreeDiagram
 - fix uml diagram to correct version
 - Update readme.md
 - Merge pull request #2 from kat-dearstyne/BUGFIX/cat-preference-not-defaulting
 - update uml
 - Added relationship betweeen catpreference and cats table
 - fix bug where cat preference didnt default when a cat was selected
+- adding more comments
+- update to readme file
+- updated AppRouter.js
 - update uml
 - Merge pull request #1 from kat-dearstyne/FEATURE-4/part-a
 - use mermaid diagram as a png
