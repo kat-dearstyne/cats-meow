@@ -23,6 +23,10 @@ We also initialized routing from component module to another.
 ## UML Diagram
 ![Mermaid Diagram](uml_diagram.png)
 
+## Component Tree Diagram
+## UML Diagram
+![Alt text](ComponentTreeDiagram.jpg)
+
 # Partners
 
 Kat Dearstyne & Annalisa Szymanski_
