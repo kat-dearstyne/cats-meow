@@ -1,3 +1,4 @@
+- add changelog
 - Merge branch 'main' of github.com:kat-dearstyne/cats-meow
 - add change log for release v0.2.0
 - Merge pull request #3 from kat-dearstyne/FEATURE-4/part-b
