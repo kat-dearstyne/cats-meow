@@ -21,7 +21,6 @@ const BaseForm = ({ formFields, service }) => {
             }
         }
 
-        console.log("FormData on Submmit:", defaultFormData);
         service.createObject(defaultFormData)
             .then((result) => {
                 console.log("Form data saved:", result);
@@ -32,6 +31,7 @@ const BaseForm = ({ formFields, service }) => {
     };
 
     const handleChange = (event) => {
+
         const { name, value } = event.target;
         setFormData((prevFormData) => ({
             ...prevFormData,
