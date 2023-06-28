@@ -1,0 +1,19 @@
+- fix uml diagram to correct version
+- Update readme.md
+- Merge pull request #2 from kat-dearstyne/BUGFIX/cat-preference-not-defaulting
+- update uml
+- Added relationship betweeen catpreference and cats table
+- fix bug where cat preference didnt default when a cat was selected
+- update uml
+- Merge pull request #1 from kat-dearstyne/FEATURE-4/part-a
+- use mermaid diagram as a png
+- add uml diagram to readme
+- rename generic form to match filename (BaseForm)
+- add parse model for adopt and contact form
+- add parse models for cats and news and bug fixes
+- adding package lock to .gitignore
+- fixes
+- Update package-lock.json
+- updating with previous work for website
+- first commit
+- Initialize project using Create React App
