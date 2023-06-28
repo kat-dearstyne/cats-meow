@@ -3,6 +3,7 @@ import ContactService from "../../services/ContactService";
 
 const Contact = () => {
     const formFields = [
+        // array of objects representing the fields for the contact form
         {label: "Name:", type: "text", name: "name", required: true},
         {label: "Email:", type:"email", name: "email", required: true},
         {label: "Subject:", type: "text", name: "subject", required: true },
