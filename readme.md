@@ -16,12 +16,16 @@ The website is designed to serve as an interactive and comprehensive platform fo
 
 The Cat's Meow website aims to create a seamless experience for prospective cat parents, with everything they need in one place to facilitate a successful adoption process.
 
-## Future Builds
-
-We are still working to build out users for the platform so that individuals can sign in and check the status of their application.
+## New in Feature 4
+We configured parse initialization by creating separate parse models for each class.
+We also initialized routing from component module to another.
 
 ## UML Diagram
 ![Mermaid Diagram](uml_data.png)
+
+## Component Tree Diagram
+## UML Diagram
+![Alt text](ComponentTreeDiagram.jpg)
 
 # Partners
 

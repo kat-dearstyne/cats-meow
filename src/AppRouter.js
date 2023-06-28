@@ -1,51 +1,25 @@
+// Import necessary modules and components
 import React from "react";
-import { createBrowserRouter, RouterProvider, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+// Import the components for each page
 import Adopt from "./components/Adopt/Adopt";
 import Contact from "./components/Contact/Contact";
 import News from "./components/News/News";
 import Home from "./components/Home/Home";
 import Cats from "./components/Cats/Cats";
 
-const routes = [
-    {
-        path: "/",
-        element: <Home />,
-        children: [],
-    },
-    {
-        path: "/cats",
-        element: <Cats />,
-        children: [],
-    },
-    {
-        path: "/adopt",
-        element: <Adopt />,
-        children: [],
-    },
-    {
-        path: "/news",
-        element: <News />,
-        children: [],
-    },
-    {
-        path: "/contact",
-        element: <Contact />,
-        children: [],
-    },
-];
-
 const AppRouter = () => {
-    const router = createBrowserRouter(routes);
-
     return (
-        <RouterProvider router={router}>
+        <Router>
             <Routes>
-                {routes.map((route, index) => (
-                    <Route key={index} path={route.path} element={route.element} />
-                ))}
+                <Route path="/" element={<Home />} />
+                <Route path="/cats" element={<Cats />} />
+                <Route path="/adopt" element={<Adopt />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/contact" element={<Contact />} />
             </Routes>
-        </RouterProvider>
+        </Router>
     );
 };
 
