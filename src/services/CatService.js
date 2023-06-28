@@ -1,4 +1,4 @@
-import createService from "./createService.js";
+import Service from "./Service.js";
 
-const CatService = createService("Cat");
+const CatService = new Service("Cat");
 export default CatService;

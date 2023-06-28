@@ -1,4 +1,4 @@
-import createService from "./createService.js";
+import Service from "./Service.js";
 
-const ContactService = createService("Contact");
+const ContactService = new Service("Contact");
 export default ContactService;

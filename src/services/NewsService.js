@@ -1,4 +1,4 @@
-import createService from "./createService.js";
+import Service from "./Service.js";
 
-const NewsService = createService("News");
+const NewsService = new Service("News");
 export default NewsService;

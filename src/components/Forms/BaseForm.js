@@ -10,7 +10,18 @@ const BaseForm = ({ formFields, service }) => {
         event.preventDefault();
         setShowPopup(true);
 
-        service.createObject(formData)
+        const defaultFormData = formFields.reduce((result, { name, value }) => {
+            result[name] = value || "";
+            return result;
+        }, {});
+
+        for (const key in defaultFormData) {
+            if (formData.hasOwnProperty(key)) {
+                defaultFormData[key] = formData[key];
+            }
+        }
+
+        service.createObject(defaultFormData)
             .then((result) => {
                 console.log("Form data saved:", result);
             })
@@ -20,23 +31,26 @@ const BaseForm = ({ formFields, service }) => {
     };
 
     const handleChange = (event) => {
+
         const { name, value } = event.target;
         setFormData((prevFormData) => ({
             ...prevFormData,
             [name]: value,
         }));
     };
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                {formFields.map((field, index) => {
-                    const Component = field.component || FormItem;
-                    const { component, serviceOptions, ...rest } = field;
+                {formFields.map((fieldData, index) => {
+                    const Component = fieldData.component || FormItem;
+                    const { component, serviceOptions, ...rest } = fieldData;
+
                     return (
                         <Component
                             key={index}
                             {...rest}
-                            value={formData[field.name] || ""}
+                            value={fieldData.value || ""}
                             onChange={handleChange}
                         />
                     );
