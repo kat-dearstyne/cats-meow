@@ -18,6 +18,7 @@ const Adopt = (props) => {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const catName = urlParams.get("cat");
+    console.log("SETTING PARAM:", catName);
     setCurrentCat(catName || "");
   }, []);
 
