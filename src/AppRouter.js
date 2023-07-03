@@ -9,6 +9,10 @@ import News from "./components/News/News";
 import Home from "./components/Home/Home";
 import Cats from "./components/Cats/Cats";
 
+// Import the authentication components
+import Login from "./components/Authentication/Login";
+import Register from "./components/Authentication/Register";
+
 const AppRouter = () => {
     return (
         <Router>
@@ -18,6 +22,11 @@ const AppRouter = () => {
                 <Route path="/adopt" element={<Adopt />} />
                 <Route path="/news" element={<News />} />
                 <Route path="/contact" element={<Contact />} />
+
+                {/* Add routes for Login and Register components */}
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+
             </Routes>
         </Router>
     );
