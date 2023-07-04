@@ -27,7 +27,8 @@ function Login() {
 
   return (
     <div>
-      <h1>Welcome to Cats Meow. Please Login:</h1>
+      <h2>Welcome to Cats Meow!</h2>
+        <h2>Please Login</h2>
       <AuthForm user={user} onChange={handleChange} onSubmit={handleLogin} />
       <p>Don't have an account? <button onClick={handleRegisterRedirect}>Sign Up!</button></p>
     </div>
