@@ -2,6 +2,7 @@ import Parse from 'parse';
 import authService from "../../services/AuthServices";
 import {useState} from "react";
 
+// Checks whether user is logged in
 function useAuth() {
     const [user, setUser] = useState(Parse.User.current());
 
