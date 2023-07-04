@@ -17,22 +17,28 @@ function AppRouter() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={ <ProtectedRoute component={Home} loggedIn={loggedIn} />
+                <Route path="/" element={ <ProtectedRoute component={Home} flag={loggedIn} />
                 } />
                 <Route path="/cats/*" element={
-                    <ProtectedRoute component={Cats} loggedIn={loggedIn} />
+                    <ProtectedRoute component={Cats} flag={loggedIn} />
                 } />
                 <Route path="/adopt/*" element={
-                    <ProtectedRoute component={Adopt} loggedIn={loggedIn} />
+                    <ProtectedRoute component={Adopt} flag={loggedIn} />
                 } />
                 <Route path="/news/*" element={
-                    <ProtectedRoute component={News} loggedIn={loggedIn} />
+                    <ProtectedRoute component={News} flag={loggedIn} />
                 } />
                 <Route path="/contact/*" element={
-                    <ProtectedRoute component={Contact} loggedIn={loggedIn} />
+                    <ProtectedRoute component={Contact} flag={loggedIn} />
                 } />
-                <Route path="/login/*" element={<Login />} />
-                <Route path="/register/*" element={<Register />} />
+                <Route path="/login/*" element={
+                    <ProtectedRoute component={Login} flag={!loggedIn} redirectTo={"/"}/>
+                    // Redirect to home if logged in
+                } />
+                <Route path="/register/*" element={
+                    <ProtectedRoute component={Register} flag={!loggedIn} redirectTo={"/"}/>
+                    // Redirect to home if logged in
+                } />
             </Routes>
         </Router>
     );
