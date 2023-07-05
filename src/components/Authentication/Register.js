@@ -12,9 +12,13 @@ function Register() {
     event.preventDefault();
     try {
       const registeredUser = await authService.register(user);
-      // Do something with registered user data here
+      // Do something with registeredUser data here
+      // Then navigate to the login page
+      navigate("/login");
     } catch (error) {
       // Handle errors here
+      console.log(error);
+      alert(error.message); 
     }
   };
 
@@ -30,7 +34,7 @@ function Register() {
     <div>
       <h2>Welcome to Cats Meow!</h2>
       <h2>Please fill out the fields below to register.</h2>
-      <AuthForm user={user} onChange={handleChange} onSubmit={handleRegister} buttonText="Register" />
+      <AuthForm user={user} onChange={handleChange} onSubmit={handleRegister} buttonText="Register" isRegisterForm={true} />
       <p>Already have an account? <button onClick={handleLoginRedirect}>Login in</button></p>
 
     </div>

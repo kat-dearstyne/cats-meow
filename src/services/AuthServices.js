@@ -13,6 +13,7 @@ const authService = {
     try {
       const user = new Parse.User();
       user.set('username', userDetails.email); // using email as username
+      user.set('email', userDetails.email);
       user.set('password', userDetails.password);
       user.set('firstName', userDetails.firstName);
       user.set('lastName', userDetails.lastName);

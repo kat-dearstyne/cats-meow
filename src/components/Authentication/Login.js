@@ -10,10 +10,10 @@ function Login() {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      const loggedInUser = await authService.login(user);
-      // Do something with logged in user data here
+      const loggedInUser = await authService.login(user.email, user.password);        
+      // Navigate to root page after successful login
+      navigate('/');
     } catch (error) {
-      // Handle errors here
     }
   };
 
@@ -29,7 +29,7 @@ function Login() {
     <div>
       <h2>Welcome to Cats Meow!</h2>
         <h2>Please Login</h2>
-      <AuthForm user={user} onChange={handleChange} onSubmit={handleLogin} />
+        <AuthForm user={user} onChange={handleChange} onSubmit={handleLogin} />
       <p>Don't have an account? <button onClick={handleRegisterRedirect}>Sign Up!</button></p>
     </div>
   );
