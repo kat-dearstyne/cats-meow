@@ -12,7 +12,10 @@ function Login() {
     try {
       const loggedInUser = await authService.login(user.email, user.password);        
       // Navigate to root page after successful login
-      navigate('/');
+      // Wait for state to update - TODO use state in the future
+      setTimeout(() =>{
+        window.location = "/"
+      }, 20);
     } catch (error) {
     }
   };
