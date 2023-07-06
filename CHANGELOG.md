@@ -1,3 +1,14 @@
+- Merge branch 'main' of github.com:kat-dearstyne/cats-meow
+- updating changelog
+- Merge pull request #7 from kat-dearstyne/feature5-studentb
+- update navigation after login success
+- updated login/register pages and redirection
+- Merge pull request #6 from kat-dearstyne/feature5-studenta
+- add redirection if user is logged in but going to /login and add comments
+- Merge pull request #4 from kat-dearstyne/feature5-studenta
+- update styling of register/login to match rest of site
+- Add protected routes
+- Adding Login/Register Components
 - add changelog
 - add changelog
 - Merge branch 'main' of github.com:kat-dearstyne/cats-meow
