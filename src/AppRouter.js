@@ -9,6 +9,7 @@ import Login from "./components/Authentication/Login";
 import ProtectedRoute from "./components/Common/ProtectedRoute";
 import useAuth from "./components/Authentication/Auth";
 import Register from "./components/Authentication/Register";
+import Admin from "./components/Admin/Admin";
 
 
 function AppRouter() {
@@ -30,6 +31,8 @@ function AppRouter() {
                 } />
                 <Route path="/contact/*" element={
                     <ProtectedRoute component={Contact} flag={loggedIn} />
+                } />
+                <Route path="/admin/*" element={ <Admin/>
                 } />
                 <Route path="/login/*" element={
                     <ProtectedRoute component={Login} flag={!loggedIn} redirectTo={"/"}/>

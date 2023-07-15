@@ -8,6 +8,7 @@ import "../src/styles/common.css";
 import "../src/styles/navbar.css";
 import "../src/styles/news.css";
 import "../src/styles/cats.css";
+import "../src/styles/admin.css";
 
 // Get the root DOM node in which the React application will be attached
 const root = ReactDOM.createRoot(document.getElementById('root'));
