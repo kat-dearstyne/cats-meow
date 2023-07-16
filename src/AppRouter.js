@@ -10,6 +10,7 @@ import ProtectedRoute from "./components/Common/ProtectedRoute";
 import useAuth from "./components/Authentication/Auth";
 import Register from "./components/Authentication/Register";
 import Admin from "./components/Admin/Admin";
+import AdoptStatus from "./components/AdoptStatus/AdoptStatus";
 
 
 function AppRouter() {
@@ -33,6 +34,8 @@ function AppRouter() {
                     <ProtectedRoute component={Contact} flag={loggedIn} />
                 } />
                 <Route path="/admin/*" element={ <Admin/>
+                } />
+                <Route path="/status/*" element={ <AdoptStatus/>
                 } />
                 <Route path="/login/*" element={
                     <ProtectedRoute component={Login} flag={!loggedIn} redirectTo={"/"}/>

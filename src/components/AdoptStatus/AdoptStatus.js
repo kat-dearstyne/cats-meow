@@ -1,28 +1,20 @@
 import React, {useState} from 'react';
 import AdoptService from '../../services/AdoptService';
 import useService from "../useService";
+import useAuth from "../Authentication/Auth";
 
-const Admin = () => {
+const AdoptStatus = () => {
     const [selectedForm, setSelectedForm] = useState(null);
+    const {user} = useAuth();
 
-    const forms = useService(AdoptService);
+    const transformData = (response) => {
+        return response.filter((item) => item.user.parent.id !== user.id);
+    }
+    const forms = useService(AdoptService, transformData);
 
     const handleFormClick = (form) => {
         setSelectedForm(form);
 
-    };
-
-    const handleStatusChange = async (newStatus) => {
-        if (selectedForm) {
-            console.log(selectedForm.objectId);
-            try {
-                await AdoptService.updateValue(selectedForm.id, "status", newStatus);
-                // Update the status of the selected form in the UI
-                setSelectedForm({...selectedForm, status: newStatus});
-            } catch (error) {
-                console.error('Failed to update form status:', error);
-            }
-        }
     };
 
     return (
@@ -40,7 +32,7 @@ const Admin = () => {
                                 onClick={() => handleFormClick(form)}
                                 className={selectedForm && selectedForm.id === form.id ? 'selected' : ''}
                             >
-                                <strong> {form.name}</strong>
+                                <strong> {form.catPreference}</strong>
                                 <br/>
                                 <div style={{fontStyle: 'italic'}}> {form.status}</div>
                             </li>
@@ -67,18 +59,6 @@ const Admin = () => {
                                     );
                                 })}
 
-                                <h3 className={"parent-center"}>Change Status: </h3>
-                                <div className={"parent-center"}>
-                                    <button onClick={() => handleStatusChange('approved')}>
-                                        Approve
-                                    </button>
-                                    <button onClick={() => handleStatusChange('denied')}>
-                                        Deny
-                                    </button>
-                                    <button onClick={() => handleStatusChange('under review')}>
-                                        Under Review
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -88,4 +68,4 @@ const Admin = () => {
     );
 };
 
-export default Admin;
+export default AdoptStatus;
