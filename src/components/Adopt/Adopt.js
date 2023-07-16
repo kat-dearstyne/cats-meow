@@ -91,7 +91,7 @@ const Adopt = (props) => {
   return (
       <div>
         <h2>Adoption Form</h2>
-        <BaseForm formFields={formFields} service={AdoptService} />
+        <BaseForm formFields={formFields} service={AdoptService} includeUser={true} />
       </div>
   )
 };

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import FormSuccessPopup from "../Forms/FormSuccessPopup";
 import FormItem from "../Forms/FormItem";
+import useAuth from "../Authentication/Auth";
 
-const BaseForm = ({ formFields, service }) => {
+const BaseForm = ({ formFields, service, includeUser=false }) => {
     const [showPopup, setShowPopup] = useState(false);
     const [formData, setFormData] = useState({});
+    const user = useAuth();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -21,6 +23,10 @@ const BaseForm = ({ formFields, service }) => {
             }
         }
 
+        if (includeUser) {
+            defaultFormData["user"] = user;
+        }
+        
         service.createObject(defaultFormData)
             .then((result) => {
                 console.log("Form data saved:", result);

@@ -42,6 +42,7 @@ const Admin = () => {
                             >
                                 <strong> {form.name}</strong>
                                 <br/>
+                                <strong style={{fontStyle: 'italic'}}> - {form.catPreference} -</strong>
                                 <div style={{fontStyle: 'italic'}}> {form.status}</div>
                             </li>
                         ))}
