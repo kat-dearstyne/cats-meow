@@ -49,6 +49,14 @@ export class Service {
       return object.destroy();
     });
   }
+
+  updateValue(id, column, value) {
+    const obj = this.getObjectById(id);
+    return obj.then((object) => {
+      object.set(column, value);
+      return object.save();
+    });
+  }
 }
 
 export default Service;

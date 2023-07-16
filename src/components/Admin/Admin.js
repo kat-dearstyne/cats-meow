@@ -1,37 +1,22 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import AdoptService from '../../services/AdoptService';
+import useService from "../useService";
 
 const AdminPage = () => {
-    const [forms, setForms] = useState([]);
     const [selectedForm, setSelectedForm] = useState(null);
 
-    useEffect(() => {
-        // Fetch adoption forms when the component mounts
-        fetchAdoptionForms();
-    }, []);
-
-    const fetchAdoptionForms = async () => {
-        try {
-            const formsData = await AdoptService.getAllObjects();
-            setForms(formsData);
-        } catch (error) {
-            console.error('Failed to fetch adoption forms:', error);
-        }
-    };
+    const forms = useService(AdoptService);
 
     const handleFormClick = (form) => {
-        if (selectedForm && selectedForm.name === form.name) {
-            setSelectedForm(null); // Clear the selection
-        } else {
-            setSelectedForm(form);
-        }
+        setSelectedForm(form);
 
     };
 
     const handleStatusChange = async (newStatus) => {
         if (selectedForm) {
+            console.log(selectedForm.objectId);
             try {
-                await AdoptService.updateFormStatus(selectedForm.id, newStatus);
+                await AdoptService.updateValue(selectedForm.id, "status", newStatus);
                 // Update the status of the selected form in the UI
                 setSelectedForm({...selectedForm, status: newStatus});
             } catch (error) {
@@ -42,7 +27,7 @@ const AdminPage = () => {
 
     return (
         <div id={"admin-page"}>
-            <h2 style={{ fontSize: "24px" }}>Adoption Forms</h2>
+            <h2 style={{fontSize: "24px"}}>Adoption Forms</h2>
             {forms.length === 0 ? (
                 <p>No adoption forms found.</p>
             ) : (
@@ -51,13 +36,13 @@ const AdminPage = () => {
                     <ul id="admin-form-list">
                         {forms.map((form) => (
                             <li
-                                key={form.name}
+                                key={form.id}
                                 onClick={() => handleFormClick(form)}
-                                className={selectedForm === form ? 'selected' : ''}
+                                className={selectedForm && selectedForm.id === form.id ? 'selected' : ''}
                             >
                                 <strong> {form.name}</strong>
-                                <br />
-                                <div style={{ fontStyle: 'italic' }}> {form.status}</div>
+                                <br/>
+                                <div style={{fontStyle: 'italic'}}> {form.status}</div>
                             </li>
                         ))}
                     </ul>
@@ -70,11 +55,17 @@ const AdminPage = () => {
                         <div>
                             <h2>Selected Form</h2>
                             <div id={"selected-form"}>
-                                {Object.entries(selectedForm).map(([key, value]) => (
-                                    <p key={key}>
-                                        <strong>{key}:</strong> {value}
-                                    </p>
-                                ))}
+                                {Object.entries(selectedForm).map(([key, value]) => {
+                                    if (!(typeof value === "string")) {
+                                        // Skip values of type "date"
+                                        return null;
+                                    }
+                                    return (
+                                        <p key={key}>
+                                            <strong>{key}:</strong> {value}
+                                        </p>
+                                    );
+                                })}
 
                                 <h3 className={"parent-center"}>Change Status: </h3>
                                 <div className={"parent-center"}>
