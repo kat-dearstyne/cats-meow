@@ -1,4 +1,4 @@
-#admin-form-list {
+#form-list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -8,7 +8,7 @@
     flex-direction: row;
 }
 
-#admin-form-list li {
+#form-list li {
     cursor: pointer;
     padding: 20px;
     border: 1px solid #ddd;
@@ -22,21 +22,21 @@
 
 }
 
-#admin-form-list li:hover {
+#form-list li:hover {
     box-shadow: 0 4px 4px #ddd;
 }
 
-#admin-form-list li .name {
+#form-list li .name {
     font-weight: bold;
     margin-bottom: 10px;
     display: block;
 }
 
-#admin-form-list .selected {
+#form-list .selected {
     background: #e2e2e2;
 }
 
-#admin-page {
+#dashboard-page {
     margin: 0 auto;
     padding: 20px;
     display: grid;
@@ -55,6 +55,7 @@
     margin-top: 10px;
     display: flex;
     flex-direction: column;
+    min-width: 400px;
 }
 
 #selected-form .label {
