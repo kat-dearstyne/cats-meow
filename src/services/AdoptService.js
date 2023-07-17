@@ -7,19 +7,22 @@ class AdoptServiceClass extends Service {
         const MyObject = Parse.Object.extend(this.className);
         const object = new MyObject();
 
+
         for (const key in data) {
-            if (key === 'catPreference') {
-                // Handling relation field 'catPreference'
-                const Cat = Parse.Object.extend('Cat');
-                const query = new Parse.Query(Cat);
-                query.equalTo('name', data[key]);
-                const catPreference = await query.first();
+            if (key === "user")
+            {
+                const User = Parse.Object.extend('User');
+                const query = new Parse.Query(User);
+                query.equalTo('objectId', data[key]);
+                const user = await query.first();
                 const relation = object.relation(key);
-                relation.add(catPreference);
-            } else {
+                relation.add(user);
+            }else{
+
                 object.set(key, data[key]);
             }
         }
+
 
         console.log("OBJECT SAVED:", object);
         return object.save().then((result) => {

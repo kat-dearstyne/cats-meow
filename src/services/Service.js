@@ -49,6 +49,32 @@ export class Service {
       return object.destroy();
     });
   }
+
+  updateValue(id, column, value) {
+    const obj = this.getObjectById(id);
+    return obj.then((object) => {
+      object.set(column, value);
+      return object.save();
+    });
+  }
+
+  getRowsByRelatedId(relatedColumn, relatedID) {
+    const MyObject = Parse.Object.extend(this.className);
+    const query = new Parse.Query(MyObject);
+
+    // Create a query for the related object
+    const relatedClass = relatedColumn.charAt(0).toUpperCase() + relatedColumn.slice(1);
+    const innerQuery = new Parse.Query(relatedClass);
+    innerQuery.equalTo("objectId", relatedID);
+
+    // Set up the relational query
+    query.matchesQuery(relatedColumn, innerQuery);
+    query.include(relatedColumn);
+
+    return query.find().then((results) => {
+      return results;
+    });
+  }
 }
 
 export default Service;

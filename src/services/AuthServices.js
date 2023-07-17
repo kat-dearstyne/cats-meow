@@ -22,6 +22,14 @@ const authService = {
     } catch (error) {
       throw error;
     }
+  },
+  logout: async () => {
+    try {
+      await Parse.User.logOut();
+      // Additional cleanup or actions after logout, if needed
+    } catch (error) {
+      throw error;
+    }
   }
 };
 
