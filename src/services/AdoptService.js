@@ -13,7 +13,7 @@ class AdoptServiceClass extends Service {
             {
                 const User = Parse.Object.extend('User');
                 const query = new Parse.Query(User);
-                query.equalTo('id', data[key].id);
+                query.equalTo('objectId', data[key]);
                 const user = await query.first();
                 const relation = object.relation(key);
                 relation.add(user);
