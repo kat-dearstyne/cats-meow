@@ -11,6 +11,7 @@ import useAuth from "./components/Authentication/Auth";
 import Register from "./components/Authentication/Register";
 import Admin from "./components/Admin/Admin";
 import AdoptStatus from "./components/AdoptStatus/AdoptStatus";
+import LikedCats from "./components/SavedCats/LikedCats";
 
 
 function AppRouter() {
@@ -38,6 +39,9 @@ function AppRouter() {
                 }/>
                 <Route path="/status/*" element={
                     <ProtectedRoute component={AdoptStatus} flag={loggedIn}/>
+                }/>                
+                <Route path="/likedcats/*" element={
+                    <ProtectedRoute component={LikedCats} flag={loggedIn}/>
                 }/>
                 <Route path="/login/*" element={
                     <ProtectedRoute component={Login} flag={!loggedIn} redirectTo={"/"}/>

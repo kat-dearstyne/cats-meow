@@ -25,6 +25,9 @@ function Navbar() {
                 {loggedIn && !user.attributes.isAdmin && (
                     <NavItem link="/status" text="Adoption Status"/>
                 )}
+                {loggedIn && (
+                    <NavItem link="/likedcats" text="Saved Cats"/>
+                )}
                 {loggedIn && user.attributes.isAdmin && (
                     <NavItem link="/admin" text="Admin Board"/>
                 )}
@@ -33,7 +36,6 @@ function Navbar() {
                         Logout
                     </button>
                 )}
-
             </ul>
         </nav>
     );

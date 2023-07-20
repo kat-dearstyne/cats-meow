@@ -1,7 +1,7 @@
 import React from "react";  // Import the React library
 
 // Create a functional component named CatCard
-const CatCard = ({ cat, index, currentIndex }) => (
+const CatCard = ({ cat, index, currentIndex, likeCat, unlikeCat, isLiked }) => (
     <div
         className="carousel-card"
         key={index}
@@ -15,8 +15,15 @@ const CatCard = ({ cat, index, currentIndex }) => (
                 <h2>{cat.name}</h2>  
                 <p>{cat.description}</p> 
             </div>
-            <a href={`/adopt?cat=${encodeURIComponent(cat.name)}`}>Adopt me!</a>                  
-
+            <div className="cat-actions">
+                <a className="cat-action-button" href={`/adopt?cat=${encodeURIComponent(cat.name)}`}>Adopt me!</a>
+                <button 
+                    className="cat-action-button" 
+                    onClick={isLiked ? () => unlikeCat(cat) : () => likeCat(cat)}
+                >
+                    {isLiked ? '💔 Remove from My Cats' : '❤️ Save to My Cats'}
+                </button>        
+            </div>
         </div>
     </div>
 );

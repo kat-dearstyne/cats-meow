@@ -106,3 +106,55 @@ a:visited {
 .carousel-buttons button:hover {
   background-color: #000066;
 }
+
+/* .cat-action-button {
+  color: #fff;
+  text-decoration: none;
+  background-color: #333399;
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px; 
+  font-family: Arial, sans-serif; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px;
+} */
+
+.cat-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 30px;
+}
+
+.cat-action-buttons {
+  display: flex; /* This will align the child items (the buttons) in a row */
+  justify-content: space-between; /* This will add space between the buttons */
+}
+
+.cat-action-button {
+  color: #fff;
+  text-decoration: none;
+  background-color: #333399;
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  flex-grow: 1; /* This will make the buttons take up the same amount of space */
+  margin: 0 10px; 
+}
+
+/* For the 'Adopt Me!' button */
+a.cat-action-button:hover {
+  background-color: green; 
+}
+
+/* For the 'Save Cat' button */
+button.cat-action-button:hover {
+  background-color: gray; 
+}
