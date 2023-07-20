@@ -1,3 +1,16 @@
+- cleanup
+- Update readme.md
+- Merge pull request #8 from kat-dearstyne/FEATURE/admin
+- refactor adoptstatus and admin to use generalized components
+- fix add user to adoption form
+- only retrieve adoption forms for a specific user
+- add log out
+- add protected route to admin and status
+- automatically add user to the adoption form
+- add adopt status
+- bug fix and update to use new parse db
+- add page for admins
+- updating changelog
 - Merge branch 'main' of github.com:kat-dearstyne/cats-meow
 - updating changelog
 - Merge pull request #7 from kat-dearstyne/feature5-studentb
