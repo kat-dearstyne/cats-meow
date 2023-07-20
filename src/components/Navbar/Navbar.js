@@ -26,7 +26,7 @@ function Navbar() {
                     <NavItem link="/status" text="Adoption Status"/>
                 )}
                 {loggedIn && (
-                    <NavItem link="/likedcats" text="Saved Cats"/>
+                    <NavItem link="/likedcats" text="My Saved Cats"/>
                 )}
                 {loggedIn && user.attributes.isAdmin && (
                     <NavItem link="/admin" text="Admin Board"/>

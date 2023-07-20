@@ -158,3 +158,20 @@ a.cat-action-button:hover {
 button.cat-action-button:hover {
   background-color: gray; 
 }
+
+.cat-card {
+  text-align: center; /* Align text to the center */
+  margin-bottom: 50px; /* Adjust this value as you need */
+}
+
+.cat-name {
+  font-weight: bold; /* Make cat name bold */
+}
+
+.cat-description {
+  margin-top: 10px; /* Add space above the description */
+}
+
+.cat-status {
+  color: red; /* or 'red' */
+}
