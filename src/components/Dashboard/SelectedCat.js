@@ -1,13 +1,13 @@
 import React from 'react';
 
-const SelectedCat = ({ cat }) => {
-  return (
-    <div>
-      <h2>{cat.get('name')}</h2>
-      <img src={cat.get('image')} alt={cat.get('name')} />
-      <p>{cat.get('description')}</p>
-    </div>
-  );
+const SelectedCat = ({ selectedCat }) => {
+    return (
+        <div>
+            <h2>{selectedCat.get('name')}</h2>
+            <img src={selectedCat.get('image')} alt={selectedCat.get('name')} style={{maxWidth: "50px", maxHeight: "50px"}}/>
+            <p>{selectedCat.get('description')}</p>
+        </div>
+    );
 };
 
 export default SelectedCat;
