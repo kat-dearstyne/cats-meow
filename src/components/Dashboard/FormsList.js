@@ -1,5 +1,6 @@
 import React from 'react';
 
+// shows all adoption forms
 const FormList = ({ forms, selectedForm, handleFormClick }) => {
     return (
         <div>

@@ -35,6 +35,7 @@ function AppRouter() {
                 }/>
                 <Route path="/admin/*" element={
                     <ProtectedRoute component={Admin} flag={loggedIn && user.attributes.isAdmin}/>
+                    // only allow admins to see this page
                 }/>
                 <Route path="/status/*" element={
                     <ProtectedRoute component={AdoptStatus} flag={loggedIn}/>

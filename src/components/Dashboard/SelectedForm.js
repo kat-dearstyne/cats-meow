@@ -1,6 +1,7 @@
 import React from 'react';
 import ChangeStatusButtons from './ChangeStatusButtons';
 
+// displays a single selected form
 const SelectedForm = ({ selectedForm, handleStatusChange }) => {
     return (
         <div>

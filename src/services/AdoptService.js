@@ -9,7 +9,7 @@ class AdoptServiceClass extends Service {
 
 
         for (const key in data) {
-            if (key === "user")
+            if (key === "user") // save the user that submitted the form to display on their dashboard
             {
                 const User = Parse.Object.extend('User');
                 const query = new Parse.Query(User);

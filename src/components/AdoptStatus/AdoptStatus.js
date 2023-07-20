@@ -18,15 +18,9 @@ const AdoptStatus = () => {
 
     return (
         <div id="dashboard-page">
-            <h2 style={{ fontSize: '24px' }}>Adoption Forms</h2>
-            {forms.length === 0 ? (
-                <p>No adoption forms found.</p>
-            ) : (
-                <FormsList forms={forms} selectedForm={selectedForm} handleFormClick={handleFormClick} />
-            )}
-
+            <FormsList forms={forms} selectedForm={selectedForm} handleFormClick={handleFormClick} />
             {selectedForm && (
-                    <SelectedForm selectedForm={selectedForm} />
+                <SelectedForm selectedForm={selectedForm} />
             )}
         </div>
     );

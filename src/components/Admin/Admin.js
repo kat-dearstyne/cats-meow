@@ -14,7 +14,7 @@ const Admin = () => {
     };
 
     const handleStatusChange = async (newStatus) => {
-        if (selectedForm) {
+        if (selectedForm) { // update status of currently selected form
             try {
                 await AdoptService.updateValue(selectedForm.id, 'status', newStatus);
                 setSelectedForm({ ...selectedForm, status: newStatus });

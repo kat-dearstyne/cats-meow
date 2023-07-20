@@ -1,5 +1,6 @@
 import React from 'react';
 
+// changes status of adoption forms
 const ChangeStatusButtons = ({ handleStatusChange }) => {
     return (
         <div>
