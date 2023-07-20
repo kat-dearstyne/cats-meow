@@ -16,6 +16,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-sizing: border-box;
   border-radius: 5px;
+  padding: 20px;
 }
 
 .cat-image {
@@ -175,3 +176,59 @@ button.cat-action-button:hover {
 .cat-status {
   color: red; /* or 'red' */
 }
+
+.cat-details-banner summary {
+  /* Style for the "Learn More" dropdown */
+  color: #007BFF; /* Change color to a blue similar to standard link color */
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.cat-details-banner summary::-webkit-details-marker {
+  /* Remove the default arrow icon on Chrome and Safari */
+  display: none;
+}
+
+.extra-info {
+  max-width: 200px; 
+  margin: auto;
+}
+
+.summary-text {
+  font-size: 1.2em; 
+}
+
+details > summary {
+  list-style: none; /* Removes the default disclosure widget in some browsers */
+  padding: 10px;
+  font-size: .5em;
+}
+
+details > summary::-webkit-details-marker { 
+  /* Removes the default disclosure widget in WebKit browsers */
+  display: none;
+}
+
+.summary-text::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 5px; 
+}
+
+details[open] .summary-text::before {
+  /* Changes the marker when the details are open */
+  content: '▼';
+}
+
+.extra-info p {
+  margin-bottom: 20px; /* Adjust as necessary */
+}
+
+.extra-info p strong {
+  text-decoration: underline;
+}
+
+
+
