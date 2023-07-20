@@ -27,6 +27,16 @@ We also initialized routing from component module to another.
 ## UML Diagram
 ![Alt text](ComponentTreeDiagram.jpg)
 
+## New in Feature 5
+We added user account registration and login.
+We added protected routes so unauthorized will be unable to access pages until they are logged in.
+
+## New in Feature 6
+- Admins can create special accounts to view all adoptions forms and update the status of forms
+- Users can view the status of their forms on a dashboard
+- Users can view more details about a cat including whether it has been adopted or not
+- Users can save cats to a dashboard to view later
+
 # Partners
 
 Kat Dearstyne & Annalisa Szymanski_
